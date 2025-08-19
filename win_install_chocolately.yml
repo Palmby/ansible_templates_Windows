@@ -1,0 +1,8 @@
+---
+- name: Install Chocolatey on windows hosts
+  hosts: all
+  tasks:
+    - name: Ensure Chocolatey itself is installed
+      win_chocolatey:
+        name: chocolatey  
+        state: present

@@ -1,0 +1,13 @@
+---
+- name: Install Chrome
+  hosts: all
+  tasks:
+    - name: Download Chrome MSI
+      win_get_url:
+        url: https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi
+        dest: C:\Temp\googlechrome.msi
+
+    - name: Install Chrome MSI
+      win_package:
+        path: C:\Temp\googlechrome.msi
+        state: present
